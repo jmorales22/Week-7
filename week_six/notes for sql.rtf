@@ -1,0 +1,38 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CREATE DATABASE apple_ceos;\
+\
+\\list 	**lists the databases\
+\
+\\c apple_ceos	** takes you to the database - you do not need a semi-colon\
+\
+CREATE TABLE ceos (  		*** cannot create a table without columns\
+	id serial primary key,\
+	name text,			** may want to use varchar for apostrophes and dashes\
+	year int\
+);\
+\
+\\dt		**will show the table (display table)\
+\
+SELECT * FROM ceos		**will show everything that is in the table\
+/* This is how you comment in SQL */\
+\
+INSERT INTO ceos (name, year)		**only use single quotes in Postgres\
+	VALUES (\'92Steve Jobs\'92, 1976), (\'91Mike Markkula\'92, 1976), (\'91Mike Scott\'92, 1977);\
+\
+SELECT * FROM ceos;  		**We should get back all of the data we just entered above\
+\
+SELECT name FROM ceos WHERE year = 1976;\
+\
+SELECT DISTINCT name FROM ceos;\
+\
+SELECT DISTINCT ON (name) * from ceos;		**will select all of the columns but will return distinct names\
+\
+	\
+	\
+}
