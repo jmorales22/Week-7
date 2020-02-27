@@ -32,9 +32,9 @@ const catsController = (req, res) => {
   const cats_and_dogsController = (req, res) => {
     const snippet = `<h1>Living together</h1>`;
     res
-      .status(200)
-      .send(snippet)
-      .end();
+    .status(200)
+    .send(snippet)
+    .end();
   };
   
   app.get('/cats', catsController);
